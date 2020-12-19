@@ -2,9 +2,10 @@ package com.example.doe.ui.login
 
 class LoginContract {
     interface LoginView {
-        fun getUserName(): String
+        fun getEmail(): String
         fun getUserPassword(): String
         fun openHomeScreen()
+        fun openRegisterScreen()
         fun showError()
         fun showEmptyInfoError()
         fun showUnauthUserError()
@@ -13,5 +14,6 @@ class LoginContract {
 
     interface LoginPresenter {
         fun onLoginClicked()
+        fun onRegisterClicked()
     }
 }
