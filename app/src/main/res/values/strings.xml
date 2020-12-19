@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Doe+</string>
+    <string name="text_splash_screen_title">Splash Screen</string>
+    <string name="text_empty_user_info_error">Email and password user should not empty!</string>
+    <string name="text_empty_register_info_error">Name, password, Email and Date of Birth user should not empty!</string>
+    <string name="text_unauthenticated_user_error">Unauthenticated User</string>
+    <string name="text_no_internet_error">No Internet</string>
+    <string name="point_created">Point criado com sucesso!</string>
+    <string name="title_activity_home">Map</string>
+    <string name="user_registered">Usuario registrado!</string>
+</resources>
