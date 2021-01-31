@@ -22,14 +22,12 @@ class RegisterPresenter(
         val email = view.getEmail()
         val userPassword = view.getUserPassword()
         val name = view.getName()
-        val dateOfBirth = view.getDateOfBirth()
 
         registerUseCase.run(
             UserDetailRegister(
                 email,
                 userPassword,
-                name,
-                dateOfBirth
+                name
             ),
             callback = { response ->
                 if (response.registered) {

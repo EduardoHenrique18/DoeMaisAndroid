@@ -5,7 +5,8 @@
     <string name="text_empty_register_info_error">Name, password, Email and Date of Birth user should not empty!</string>
     <string name="text_unauthenticated_user_error">Unauthenticated User</string>
     <string name="text_no_internet_error">No Internet</string>
-    <string name="point_created">Point criado com sucesso!</string>
+    <string name="recipe_created">receita criada com sucesso!</string>
     <string name="title_activity_home">Map</string>
     <string name="user_registered">Usuario registrado!</string>
+    <string name="recipe_deleted">Receita deletada!</string>
 </resources>

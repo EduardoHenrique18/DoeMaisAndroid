@@ -1,7 +1,7 @@
 package com.example.doe.domain
 
-import com.example.doe.remote.response.CreatePointDetailResponse
+import com.example.doe.remote.response.CreateRecipeDetailResponse
 
-interface SearchPointService {
-    fun searchPoint(token: String, callback: (List<CreatePointDetailResponse>?) -> Unit)
+interface SearchRecipeService {
+    fun searchRecipe(token: String, callback: (List<CreateRecipeDetailResponse>?) -> Unit)
 }

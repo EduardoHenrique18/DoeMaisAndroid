@@ -16,14 +16,12 @@ class RegisterUserService constructor(
         email: String,
         userPassword: String,
         name: String,
-        dateOfBirth: String,
         callback: (AuthUserSession?) -> Unit
     ) {
         restApi.createUser(
             CreateUserRequest(
                 name,
                 userPassword,
-                dateOfBirth,
                 email
             )
         )

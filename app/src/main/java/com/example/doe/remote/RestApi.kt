@@ -2,15 +2,13 @@ package com.example.doe.remote
 
 import com.example.doe.remote.request.CreateUserRequest
 import com.example.doe.remote.request.UserLoginRequest
-import com.example.doe.remote.request.CreatePointRequest
+import com.example.doe.remote.request.CreateRecipeRequest
 import com.example.doe.remote.response.BaseResponse
-import com.example.doe.remote.response.CreatePointDetailResponse
+import com.example.doe.remote.response.CreateRecipeDetailResponse
+import com.example.doe.remote.response.DeleteRecipeDetailResponse
 import com.example.doe.remote.response.UserSessionResponse
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface RestApi {
     @POST("login")
@@ -23,14 +21,20 @@ interface RestApi {
         @Body createUserRequest: CreateUserRequest
     ): Call<BaseResponse<UserSessionResponse>>
 
-    @POST("point")
-    fun createPoint(
+    @POST("recipe")
+    fun createRecipe(
         @Header("Authorization") token: String,
-        @Body createPointRequest: CreatePointRequest
-    ): Call<BaseResponse<CreatePointDetailResponse>>
+        @Body createRecipeRequest: CreateRecipeRequest
+    ): Call<BaseResponse<CreateRecipeDetailResponse>>
 
-    @GET("point")
-    fun searchPoint(
+    @DELETE("recipe")
+    fun deleteRecipe(
+        @Header("Authorization") token: String,
+        @Query("recipeId") recipeId: String
+    ): Call<BaseResponse<DeleteRecipeDetailResponse>>
+
+    @GET("recipe")
+    fun searchRecipe(
         @Header("Authorization") token: String
-    ): Call<BaseResponse<List<CreatePointDetailResponse>>>
+    ): Call<BaseResponse<List<CreateRecipeDetailResponse>>>
 }

@@ -14,6 +14,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
+        android:name=".MyApplication"
         android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -50,8 +51,8 @@
             android:parentActivityName=".ui.register.RegisterActivity">
         </activity>
         <activity
-            android:name=".ui.createPoint.CreatePointActivity"
-            android:parentActivityName=".ui.createPoint.CreatePointActivity">
+            android:name=".ui.createRecipe.CreateRecipeActivity"
+            android:parentActivityName=".ui.createRecipe.CreateRecipeActivity">
         </activity>
     </application>
 

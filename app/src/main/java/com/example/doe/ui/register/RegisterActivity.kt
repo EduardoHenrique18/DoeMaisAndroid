@@ -43,8 +43,6 @@ class RegisterActivity : AppCompatActivity(), RegisterContract.RegisterView {
 
     override fun getUserPassword(): String = findViewById<EditText>(R.id.register_password).text.toString()
 
-    override fun getDateOfBirth(): String = findViewById<EditText>(R.id.register_dateOfBirth).text.toString()
-
     override fun getName(): String = findViewById<EditText>(R.id.register_name).text.toString()
 
     override fun showNoInternet() {

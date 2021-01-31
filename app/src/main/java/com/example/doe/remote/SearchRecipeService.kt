@@ -1,27 +1,27 @@
 package com.example.doe.remote
 
-import com.example.doe.domain.SearchPointService
+import com.example.doe.domain.SearchRecipeService
 import com.example.doe.remote.response.BaseResponse
-import com.example.doe.remote.response.CreatePointDetailResponse
+import com.example.doe.remote.response.CreateRecipeDetailResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class SearchPointService (
+class SearchRecipeService (
     private val restApi: RestApi
-) : SearchPointService {
+) : SearchRecipeService {
 
-    override fun searchPoint(
+    override fun searchRecipe(
         token: String,
-        callback: (List<CreatePointDetailResponse>?) -> Unit
+        callback: (List<CreateRecipeDetailResponse>?) -> Unit
     ) {
-        restApi.searchPoint(
+        restApi.searchRecipe(
             token
         )
-        .enqueue(object : Callback<BaseResponse<List<CreatePointDetailResponse>>> {
+        .enqueue(object : Callback<BaseResponse<List<CreateRecipeDetailResponse>>> {
             override fun onResponse(
-                call: Call<BaseResponse<List<CreatePointDetailResponse>>>,
-                response: Response<BaseResponse<List<CreatePointDetailResponse>>>
+                call: Call<BaseResponse<List<CreateRecipeDetailResponse>>>,
+                response: Response<BaseResponse<List<CreateRecipeDetailResponse>>>
             ) {
                 if (response.code() == 200) {
                     callback(response.body()?.data)
@@ -31,7 +31,7 @@ class SearchPointService (
             }
 
             override fun onFailure(
-                call: Call<BaseResponse<List<CreatePointDetailResponse>>>, t: Throwable) {
+                call: Call<BaseResponse<List<CreateRecipeDetailResponse>>>, t: Throwable) {
                 callback(null)
                 t.printStackTrace()
             }

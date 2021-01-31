@@ -3,8 +3,6 @@ package com.example.doe.domain.usecase
 import android.os.Build
 import androidx.annotation.RequiresApi
 import com.example.doe.domain.*
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 class RegisterUseCase(
     private val registerService: RegisterService
@@ -21,14 +19,10 @@ class RegisterUseCase(
             return
         }
 
-        var formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
-        var date = LocalDate.parse(input.dateOfBirth, formatter)
-
         registerService.register(
             input.email,
             input.userPassword,
             input.name,
-            date.toString(),
             callback = { user ->
                 if (user != null) {
                     callback(
@@ -39,14 +33,14 @@ class RegisterUseCase(
                     )
                 }
             })
+
     }
 }
 
 data class UserDetailRegister(
     val email: String,
     val userPassword: String,
-    val name: String,
-    val dateOfBirth: String
+    val name: String
 )
 
 enum class RegisterStatus {
